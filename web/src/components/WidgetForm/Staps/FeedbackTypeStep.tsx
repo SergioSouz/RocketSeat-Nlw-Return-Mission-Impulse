@@ -1,22 +1,22 @@
-import { feedbackTypes,FeedbackType } from "../WidgetForm"
-import { CloseButton } from '../CloseButton'
+import { feedbackTypes, FeedbackType } from ".."
+import { CloseButton } from '../../CloseButton'
 
 
-interface FreedbackTypeStepProps{
-   onFeedbackTupeChanged:(type:FeedbackType )=>void;
+interface FreedbackTypeStepProps {
+   onFeedbackTupeChanged: (type: FeedbackType) => void;
 }
 
-export function FreedbackTypeStep({onFeedbackTupeChanged}: FreedbackTypeStepProps){
+export function FeedbackTypeStep({ onFeedbackTupeChanged }: FreedbackTypeStepProps) {
    return (
 
       <>
          <header className=''>
             <span className='text-xl leading-6'>Deixe seu feedback</span>
-            <CloseButton/>
+            <CloseButton />
          </header>
 
          <div className='flex py-8 gap-2 w-full'>
-            { Object.entries(feedbackTypes).map(([key,value]) => {
+            {Object.entries(feedbackTypes).map(([key, value]) => {
                return (
                   <button
                      key={key}
@@ -28,13 +28,13 @@ export function FreedbackTypeStep({onFeedbackTupeChanged}: FreedbackTypeStepProp
                      <span>{value.title}</span>
                   </button>
                )
-            }) }
+            })}
          </div>
 
       </>
 
 
-      
+
    )
 }
 
